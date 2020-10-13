@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="123456, likunix&#39;blog">
+    <meta name="keywords" content="迷宫求解, likunix&#39;blog">
     <meta name="description" content="computer science|Cyberspace security">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>123456 | likunix&#39;blog</title>
+    <title>迷宫求解 | likunix&#39;blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,12 +244,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">123456</h1>
+                    <h1 class="description center-align post-title">迷宫求解</h1>
                 </div>
             </div>
         </div>
@@ -413,12 +413,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>···<br>#include<iostream><br>#include<fstream><br>#include<stack><br>using namespace std;<br>stack<int> st1;<br>stack<int> st2;<br>int a[5][5];<br>int x, y;<br>//判断是否为出口<br>bool stop()<br>{<br>    //（3，3）是出口<br>    if (st1.top() == 3 &amp;&amp; st2.top() == 3)<br>    {<br>        cout &lt;&lt; “迷宫求解成功，路径为：” &lt;&lt; endl;<br>        return 1;<br>    }<br>    else<br>        return 0;<br>}<br>//判断当前位置是否可通<br>bool decide(int x,int y)<br>{<br>    int sum= a[x][y] + a[x + 1][y] + a[x - 1][y] + a[x][y + 1] + a[x][y - 1];<br>    //(x==1&amp;&amp;y==1)指迷宫入口下表<br>    if ((x==1&amp;&amp;y==1)||sum &lt; 2 || sum == 2)<br>        return 1;<br>    else<br>        return 0;<br>}</p>
+                <p>· ···<br>#include<iostream><br>#include<fstream><br>#include<stack><br>using namespace std;<br>stack<int> st1;<br>stack<int> st2;<br>int a[5][5];<br>int x, y;<br>//判断是否为出口<br>bool stop()<br>{<br>    //（3，3）是出口<br>    if (st1.top() == 3 &amp;&amp; st2.top() == 3)<br>    {<br>        cout &lt;&lt; “迷宫求解成功，路径为：” &lt;&lt; endl;<br>        return 1;<br>    }<br>    else<br>        return 0;<br>}<br>//判断当前位置是否可通<br>bool decide(int x,int y)<br>{<br>    int sum= a[x][y] + a[x + 1][y] + a[x - 1][y] + a[x][y + 1] + a[x][y - 1];<br>    //(x==1&amp;&amp;y==1)指迷宫入口下表<br>    if ((x==1&amp;&amp;y==1)||sum &lt; 2 || sum == 2)<br>        return 1;<br>    else<br>        return 0;<br>}</p>
 <p>//将栈内容逆序打印<br>void printroute()<br>{<br>    if (st1.empty())<br>    {<br>        cout &lt;&lt; “找不到路径！”;<br>        return;<br>    }<br>    stack<int> st3;<br>    stack<int> st4;<br>    while(!st1.empty() &amp;&amp; !st2.empty())<br>    {<br>        st3.push(st1.top());<br>        st4.push(st2.top());<br>        st1.pop();<br>        st2.pop();<br>    }<br>    int count=0;<br>    while (!st3.empty() &amp;&amp; !st4.empty())<br>    {<br>        if (count == 10)<br>            cout &lt;&lt; endl;<br>        cout &lt;&lt; “(“ &lt;&lt; st3.top()+1 &lt;&lt; “,” &lt;&lt; st4.top()+1 &lt;&lt; “)” &lt;&lt; “ “;<br>        st3.pop();<br>        st4.pop();<br>        count++;<br>    }<br>}<br>int main()<br>{<br>    for (int i = 0; i &lt; 5; i++)<br>        for (int j = 0; j &lt; 5; j++)<br>            a[i][j] = 1;<br>    for (int i = 0; i &lt; 5; i++)<br>    {<br>        for (int j = 0; j &lt; 5; j++)<br>        {<br>            if (j == 2 &amp;&amp; i &gt; 0 &amp;&amp; i &lt; 4)<br>                a[i][j] = 0;<br>        }<br>    }<br>    a[1][1] = 0;<br>    a[3][3] = 0;<br>    //迷宫<br>    cout &lt;&lt; “迷宫：” &lt;&lt; endl;<br>    for (int i = 0; i &lt; 5; i++)<br>    {<br>        for (int j = 0; j &lt; 5; j++)<br>        {<br>            cout&lt;&lt; a[i][j]&lt;&lt;” “;<br>        }<br>        cout &lt;&lt; endl;<br>    }<br>    //迷宫求解<br>    x = 1; y = 1;<br>    st1.push(x);<br>    st2.push(y);<br>    while (!st1.empty())<br>    {<br>        if(stop())<br>            break;<br>        //5是迷宫宽度&amp;&amp;(x&gt;y||x==y)<br>        if (!decide(x, y))<br>        {<br>            a[x][y] = 1;<br>            st1.pop();<br>            st2.pop();<br>        }<br>        else if (decide(x, y) &amp;&amp; x + 1 &lt; 5 &amp;&amp; a[x + 1][y] == 0)<br>        {<br>            x = x + 1;<br>            st1.push(x);<br>            st2.push(y);<br>        }<br>        else if (decide(x, y) &amp;&amp; y + 1 &lt; 5 &amp;&amp; a[x][y + 1] == 0)<br>        {<br>            a[x + 1][y] = 1;<br>            y = y + 1;<br>            st1.push(x);<br>            st2.push(y);<br>        }<br>        else if (decide(x, y) &amp;&amp; x - 1 &gt; -1 &amp;&amp; a[x - 1][y] == 0)<br>        {<br>            a[x][y + 1] = 1;<br>            x = x - 1;<br>            st1.push(x);<br>            st2.push(y);<br>        }<br>        else if (decide(x, y) &amp;&amp; y - 1 &gt; -1 &amp;&amp; a[x][y-1] == 0)<br>        {<br>            a[x-1][y] = 1;<br>            y = y - 1;<br>            st1.push(x);<br>            st2.push(y);<br>        }</p>
 <pre><code>&#125;
 //输出路径
 printroute();</code></pre>
-<p>}<br>···</p>
+<p>}<br>· ···</p>
 
             </div>
             <hr/>
@@ -704,9 +704,9 @@ printroute();</code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="123456">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="迷宫求解">
                         
-                        <span class="card-title">123456</span>
+                        <span class="card-title">迷宫求解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
