@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>JAVA语言基础</title>
+      <link href="2022/04/22/JAVA%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
+      <url>2022/04/22/JAVA%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h3 id="一、变量与数据类型"><a href="#一、变量与数据类型" class="headerlink" title="一、变量与数据类型"></a>一、变量与数据类型</h3><h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><ul><li><p>类名</p><ul><li><p>驼峰命名法，大写字母开头，由多个单词组成的，所有单词首字母均要大写</p></li><li><p>接口类以大写字母<code>I</code>开头，接口的实现类去掉首字母<code>I</code>，并以<code>ImpI</code>作为结尾</p></li></ul></li><li><p>方法名</p><p>驼峰法命名，但是首字母要小写</p></li><li><p>变量</p><ul><li>普通变量驼峰法命名，但是首字母要小写，可在变量名前加上2到3个字母的前缀表示变量的数据类型</li><li>静态变量全部字母大写，单词间常用<code>_</code>连接</li><li>常量全部字母大写，单词间常用<code>_</code>连接，且要用有意义的单词定义</li></ul></li></ul><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>JAVA中有8中基本数据类型</p><table><thead><tr><th>分类</th><th>数据类型</th></tr></thead><tbody><tr><td>6种数字类型（四整型二浮点）</td><td>byte,short,int,long,float,double</td></tr><tr><td>1种字符类型</td><td>char</td></tr><tr><td>1种布尔型</td><td>boolean</td></tr></tbody></table><ul><li>byte</li></ul><ul><li>short</li></ul><ul><li>int</li></ul><ul><li>long</li></ul><ul><li>float</li></ul><ul><li>double</li></ul><ul><li>char</li></ul><ul><li>boolean</li></ul><h3 id="二、运算符与表达式"><a href="#二、运算符与表达式" class="headerlink" title="二、运算符与表达式"></a>二、运算符与表达式</h3><h3 id="三、控制流程语句"><a href="#三、控制流程语句" class="headerlink" title="三、控制流程语句"></a>三、控制流程语句</h3><h3 id="四、方法和数组"><a href="#四、方法和数组" class="headerlink" title="四、方法和数组"></a>四、方法和数组</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><blockquote><p><a href="https://blog.csdn.net/qq_51184516/article/details/122971724">https://blog.csdn.net/qq_51184516</a></p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDEA学习版安装与激活</title>
       <link href="2022/03/31/IDEA%E5%AD%A6%E4%B9%A0%E7%89%88%E5%AE%89%E8%A3%85%E4%B8%8E%E6%BF%80%E6%B4%BB/"/>
       <url>2022/03/31/IDEA%E5%AD%A6%E4%B9%A0%E7%89%88%E5%AE%89%E8%A3%85%E4%B8%8E%E6%BF%80%E6%B4%BB/</url>
