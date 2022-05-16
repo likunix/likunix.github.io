@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>剑指offer学习笔记（二） | 北冥有鱼</title>
+  <meta name="keywords" content=" 算法 ">
+  <meta name="description" content="剑指offer学习笔记（二） | 北冥有鱼">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="北冥有鱼，其名为鲲。鲲之大，不知其几千里也；化而为鸟，其名为鹏。鹏之背，不知其几千里也；怒而飞，其翼若垂天之云。是鸟也，海运则将徙于南冥。南冥者，天池也。《齐谐》者，志怪者也。《谐》之言曰：“鹏之徙于南冥也，水击三千里，抟扶摇而上者九万里，去以六月息者也。”野马也，尘埃也，生物之以息相吹也。天之苍苍，其正色邪？其远而无所至极邪？其视下也，亦若是则已矣。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://kunhua.link/about/index.html">
+<meta property="og:site_name" content="北冥有鱼">
+<meta property="og:description" content="北冥有鱼，其名为鲲。鲲之大，不知其几千里也；化而为鸟，其名为鹏。鹏之背，不知其几千里也；怒而飞，其翼若垂天之云。是鸟也，海运则将徙于南冥。南冥者，天池也。《齐谐》者，志怪者也。《谐》之言曰：“鹏之徙于南冥也，水击三千里，抟扶摇而上者九万里，去以六月息者也。”野马也，尘埃也，生物之以息相吹也。天之苍苍，其正色邪？其远而无所至极邪？其视下也，亦若是则已矣。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-11T03:32:01.000Z">
+<meta property="article:modified_time" content="2022-03-31T02:50:57.867Z">
+<meta property="article:author" content="北冥有鱼">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="false" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.png"/>
+</a>
+<div class="author">
+    <span>北冥有鱼</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/likunix"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:likunix@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=237732961&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/playlist?id=7358939571"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(9)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后端">
+                        
+                        后端
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="算法">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        算法
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="算法<--->剑指offer">
+                                        
+                                        剑指offer
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="安全">
+                        
+                        安全
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="9">
+<input type="hidden" id="yelog_site_word_count" value="5.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JavaScript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>安全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>面向对象</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 算法 剑指offer "
+           href="/2022/05/17/%E5%89%91%E6%8C%87offer%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="剑指offer学习笔记（二）">剑指offer学习笔记（二）</span>
+            <span class="post-date" title="2022-05-17 00:01:26">2022/05/17</span>
+        </a>
+        
+        <a  class="全部文章 算法 剑指offer "
+           href="/2022/05/16/%E5%89%91%E6%8C%87offer%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="剑指offer学习笔记(一)">剑指offer学习笔记(一)</span>
+            <span class="post-date" title="2022-05-16 20:42:52">2022/05/16</span>
+        </a>
+        
+        <a  class="全部文章 安全 "
+           href="/2022/05/16/%E4%BF%A1%E6%81%AF%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/"
+           data-tag="安全"
+           data-author="" >
+            <span class="post-title" title="信息内容安全复习">信息内容安全复习</span>
+            <span class="post-date" title="2022-05-16 19:35:14">2022/05/16</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2022/05/09/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6/"
+           data-tag="Java,面向对象"
+           data-author="" >
+            <span class="post-title" title="Java面向对象进阶">Java面向对象进阶</span>
+            <span class="post-date" title="2022-05-09 22:25:27">2022/05/09</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2022/05/07/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java面向对象基础">Java面向对象基础</span>
+            <span class="post-date" title="2022-05-07 10:11:50">2022/05/07</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2022/04/23/%E5%89%8D%E7%AB%AF%E4%B8%89%E4%BB%B6%E5%A5%97/"
+           data-tag="HTML,CSS,JavaScript"
+           data-author="" >
+            <span class="post-title" title="前端三件套">前端三件套</span>
+            <span class="post-date" title="2022-04-23 09:51:23">2022/04/23</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
+           href="/2022/04/22/Java%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java语言基础">Java语言基础</span>
+            <span class="post-date" title="2022-04-22 17:17:41">2022/04/22</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/03/31/IDEA%E5%AE%89%E8%A3%85%E4%B8%8E%E6%BF%80%E6%B4%BB/"
+           data-tag="IDEA"
+           data-author="" >
+            <span class="post-title" title="IDEA安装与激活">IDEA安装与激活</span>
+            <span class="post-date" title="2022-03-31 08:18:17">2022/03/31</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/03/26/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown语法学习笔记">Markdown语法学习笔记</span>
+            <span class="post-date" title="2022-03-26 16:34:27">2022/03/26</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-剑指offer学习笔记（二）" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">剑指offer学习笔记（二）</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="算法">算法</a> > 
+            
+            <a  data-rel="算法&lt;---&gt;剑指offer">剑指offer</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">算法</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-05-17 00:03:29'>2022-05-17 00:01</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:554</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95"><span class="toc-text">搜索算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ53-%E6%95%B0%E5%AD%97%E5%9C%A8%E5%8D%87%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0"><span class="toc-text">JZ53.数字在升序数组中出现的次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE"><span class="toc-text">JZ04.二维数组中的查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97"><span class="toc-text">JZ11.旋转数组的最小数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97"><span class="toc-text">JZ38.字符串的排列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ44-%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E6%9F%90%E4%B8%80%E4%BD%8D%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">JZ44.数字序列中某一位的数字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ42-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C"><span class="toc-text">JZ42.连续子数组的最大和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ85-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-text">JZ85.连续子数组的最大和（二）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ69-%E8%B7%B3%E5%8F%B0%E9%98%B6"><span class="toc-text">JZ69.跳台阶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ10-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="toc-text">JZ10.斐波那契数列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ19-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="toc-text">JZ19.正则表达式匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ71-%E8%B7%B3%E5%8F%B0%E9%98%B6%E6%89%A9%E5%B1%95%E9%97%AE%E9%A2%98"><span class="toc-text">JZ71.跳台阶扩展问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ70-%E7%9F%A9%E9%98%B5%E8%A6%86%E7%9B%96"><span class="toc-text">JZ70.矩阵覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ63-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A5%BD%E6%97%B6%E6%9C%BA%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-text">JZ63.买卖股票的最好时机（一）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ47-%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC"><span class="toc-text">JZ47.礼物的最大价值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ48-%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ48.最长不含重复字符的子字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ46-%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ46.把数字翻译成字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF"><span class="toc-text">回溯</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-text">JZ12.矩阵中的路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4"><span class="toc-text">JZ13.机器人的运动范围</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">JZ03.数组中重复的数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9"><span class="toc-text">JZ51.数组中的逆序对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0"><span class="toc-text">JZ40.最小的k个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ41-%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0"><span class="toc-text">JZ41.数据流的中位数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-text">位运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ65-%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95"><span class="toc-text">JZ65.不用加减乘除做加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-text">JZ15.二进制中1的个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ16-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9"><span class="toc-text">JZ16.数值的整数次方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ56-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97"><span class="toc-text">JZ56.数组中只出现一次的两个数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ64-%E6%B1%821-2-3-%E2%80%A6-n"><span class="toc-text">JZ64.求1+2+3+…+n</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F"><span class="toc-text">模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ29-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5"><span class="toc-text">JZ29.顺时针打印矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ61-%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90"><span class="toc-text">JZ61.扑克牌顺子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ67-%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0-atoi"><span class="toc-text">JZ67.把字符串换成整数(atoi)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ20-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ20.表示数值的字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ66-%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84"><span class="toc-text">JZ66.构建乘积数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ50-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="toc-text">JZ50.第一个只出现一次的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC"><span class="toc-text">JZ05.替换空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ21-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E4%BD%8D%E5%89%8D%E9%9D%A2%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-text">JZ21.调整数组顺序使奇数位于偶数位前面（一）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">JZ39.数组中出现次数超过一半的数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ43-%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%88%E4%BB%8E1%E5%88%B0n%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%89"><span class="toc-text">JZ43.整数中1出现的次数（从1到n整数中1出现的次数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ45-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0"><span class="toc-text">JZ45.把数组排成最小的数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ49-%E4%B8%91%E6%95%B0"><span class="toc-text">JZ49.丑数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ74-%E5%92%8C%E4%B8%BAS%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97"><span class="toc-text">JZ74.和为S的连续正数序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ57-%E5%92%8C%E4%B8%BAS%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97"><span class="toc-text">JZ57.和为S的两个数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ58-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ58.左旋转字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ62-%E5%AD%A9%E5%AD%90%E4%BB%AC%E7%9A%84%E6%B8%B8%E6%88%8F%EF%BC%88%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%EF%BC%89"><span class="toc-text">JZ62.孩子们的游戏（圆圈中最后剩下的数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ75-%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="toc-text">JZ75.字符流中第一个不重复的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ14-%E5%89%AA%E7%BB%B3%E5%AD%90"><span class="toc-text">JZ14.剪绳子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ81-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-text">JZ81.调整数组顺序使奇数位于偶数前面（二）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ83-%E5%89%AA%E7%BB%B3%E5%AD%90%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89"><span class="toc-text">JZ83.剪绳子（进阶版）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ17-%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0"><span class="toc-text">JZ17.打印从1到最大的n位数</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95"><span class="toc-text">搜索算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ53-%E6%95%B0%E5%AD%97%E5%9C%A8%E5%8D%87%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0"><span class="toc-text">JZ53.数字在升序数组中出现的次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE"><span class="toc-text">JZ04.二维数组中的查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97"><span class="toc-text">JZ11.旋转数组的最小数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97"><span class="toc-text">JZ38.字符串的排列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ44-%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E6%9F%90%E4%B8%80%E4%BD%8D%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">JZ44.数字序列中某一位的数字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ42-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C"><span class="toc-text">JZ42.连续子数组的最大和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ85-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-text">JZ85.连续子数组的最大和（二）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ69-%E8%B7%B3%E5%8F%B0%E9%98%B6"><span class="toc-text">JZ69.跳台阶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ10-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="toc-text">JZ10.斐波那契数列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ19-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="toc-text">JZ19.正则表达式匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ71-%E8%B7%B3%E5%8F%B0%E9%98%B6%E6%89%A9%E5%B1%95%E9%97%AE%E9%A2%98"><span class="toc-text">JZ71.跳台阶扩展问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ70-%E7%9F%A9%E9%98%B5%E8%A6%86%E7%9B%96"><span class="toc-text">JZ70.矩阵覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ63-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A5%BD%E6%97%B6%E6%9C%BA%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-text">JZ63.买卖股票的最好时机（一）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ47-%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC"><span class="toc-text">JZ47.礼物的最大价值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ48-%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ48.最长不含重复字符的子字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ46-%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ46.把数字翻译成字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF"><span class="toc-text">回溯</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-text">JZ12.矩阵中的路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4"><span class="toc-text">JZ13.机器人的运动范围</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">JZ03.数组中重复的数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9"><span class="toc-text">JZ51.数组中的逆序对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0"><span class="toc-text">JZ40.最小的k个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ41-%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0"><span class="toc-text">JZ41.数据流的中位数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-text">位运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ65-%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95"><span class="toc-text">JZ65.不用加减乘除做加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-text">JZ15.二进制中1的个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ16-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9"><span class="toc-text">JZ16.数值的整数次方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ56-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97"><span class="toc-text">JZ56.数组中只出现一次的两个数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ64-%E6%B1%821-2-3-%E2%80%A6-n"><span class="toc-text">JZ64.求1+2+3+…+n</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F"><span class="toc-text">模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ29-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5"><span class="toc-text">JZ29.顺时针打印矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ61-%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90"><span class="toc-text">JZ61.扑克牌顺子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ67-%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0-atoi"><span class="toc-text">JZ67.把字符串换成整数(atoi)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ20-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ20.表示数值的字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ66-%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84"><span class="toc-text">JZ66.构建乘积数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ50-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="toc-text">JZ50.第一个只出现一次的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC"><span class="toc-text">JZ05.替换空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ21-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E4%BD%8D%E5%89%8D%E9%9D%A2%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-text">JZ21.调整数组顺序使奇数位于偶数位前面（一）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">JZ39.数组中出现次数超过一半的数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ43-%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%88%E4%BB%8E1%E5%88%B0n%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%89"><span class="toc-text">JZ43.整数中1出现的次数（从1到n整数中1出现的次数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ45-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0"><span class="toc-text">JZ45.把数组排成最小的数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ49-%E4%B8%91%E6%95%B0"><span class="toc-text">JZ49.丑数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ74-%E5%92%8C%E4%B8%BAS%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97"><span class="toc-text">JZ74.和为S的连续正数序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ57-%E5%92%8C%E4%B8%BAS%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97"><span class="toc-text">JZ57.和为S的两个数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ58-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">JZ58.左旋转字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ62-%E5%AD%A9%E5%AD%90%E4%BB%AC%E7%9A%84%E6%B8%B8%E6%88%8F%EF%BC%88%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%EF%BC%89"><span class="toc-text">JZ62.孩子们的游戏（圆圈中最后剩下的数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ75-%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="toc-text">JZ75.字符流中第一个不重复的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ14-%E5%89%AA%E7%BB%B3%E5%AD%90"><span class="toc-text">JZ14.剪绳子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ81-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-text">JZ81.调整数组顺序使奇数位于偶数前面（二）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ83-%E5%89%AA%E7%BB%B3%E5%AD%90%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89"><span class="toc-text">JZ83.剪绳子（进阶版）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JZ17-%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0"><span class="toc-text">JZ17.打印从1到最大的n位数</span></a></li></ol></li></ol></li></ol></div></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>《剑指offer》分类刷题笔记，笔记分两部分，</p>
+<p>剑指offer学习笔记（一）为<code>数据结构</code>相关题目，剑指offer学习笔记（二）为<code>算法</code>相关题目</p>
+<p>根据牛客网资料学习并整理，后续将根据学习进度更新题解：</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h2><h3 id="JZ53-数字在升序数组中出现的次数"><a href="#JZ53-数字在升序数组中出现的次数" class="headerlink" title="JZ53.数字在升序数组中出现的次数"></a>JZ53.数字在升序数组中出现的次数</h3><h3 id="JZ04-二维数组中的查找"><a href="#JZ04-二维数组中的查找" class="headerlink" title="JZ04.二维数组中的查找"></a>JZ04.二维数组中的查找</h3><h3 id="JZ11-旋转数组的最小数字"><a href="#JZ11-旋转数组的最小数字" class="headerlink" title="JZ11.旋转数组的最小数字"></a>JZ11.旋转数组的最小数字</h3><h3 id="JZ38-字符串的排列"><a href="#JZ38-字符串的排列" class="headerlink" title="JZ38.字符串的排列"></a>JZ38.字符串的排列</h3><h3 id="JZ44-数字序列中某一位的数字"><a href="#JZ44-数字序列中某一位的数字" class="headerlink" title="JZ44.数字序列中某一位的数字"></a>JZ44.数字序列中某一位的数字</h3><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="JZ42-连续子数组的最大和"><a href="#JZ42-连续子数组的最大和" class="headerlink" title="JZ42.连续子数组的最大和"></a>JZ42.连续子数组的最大和</h3><h3 id="JZ85-连续子数组的最大和（二）"><a href="#JZ85-连续子数组的最大和（二）" class="headerlink" title="JZ85.连续子数组的最大和（二）"></a>JZ85.连续子数组的最大和（二）</h3><h3 id="JZ69-跳台阶"><a href="#JZ69-跳台阶" class="headerlink" title="JZ69.跳台阶"></a>JZ69.跳台阶</h3><h3 id="JZ10-斐波那契数列"><a href="#JZ10-斐波那契数列" class="headerlink" title="JZ10.斐波那契数列"></a>JZ10.斐波那契数列</h3><h3 id="JZ19-正则表达式匹配"><a href="#JZ19-正则表达式匹配" class="headerlink" title="JZ19.正则表达式匹配"></a>JZ19.正则表达式匹配</h3><h3 id="JZ71-跳台阶扩展问题"><a href="#JZ71-跳台阶扩展问题" class="headerlink" title="JZ71.跳台阶扩展问题"></a>JZ71.跳台阶扩展问题</h3><h3 id="JZ70-矩阵覆盖"><a href="#JZ70-矩阵覆盖" class="headerlink" title="JZ70.矩阵覆盖"></a>JZ70.矩阵覆盖</h3><h3 id="JZ63-买卖股票的最好时机（一）"><a href="#JZ63-买卖股票的最好时机（一）" class="headerlink" title="JZ63.买卖股票的最好时机（一）"></a>JZ63.买卖股票的最好时机（一）</h3><h3 id="JZ47-礼物的最大价值"><a href="#JZ47-礼物的最大价值" class="headerlink" title="JZ47.礼物的最大价值"></a>JZ47.礼物的最大价值</h3><h3 id="JZ48-最长不含重复字符的子字符串"><a href="#JZ48-最长不含重复字符的子字符串" class="headerlink" title="JZ48.最长不含重复字符的子字符串"></a>JZ48.最长不含重复字符的子字符串</h3><h3 id="JZ46-把数字翻译成字符串"><a href="#JZ46-把数字翻译成字符串" class="headerlink" title="JZ46.把数字翻译成字符串"></a>JZ46.把数字翻译成字符串</h3><h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><h3 id="JZ12-矩阵中的路径"><a href="#JZ12-矩阵中的路径" class="headerlink" title="JZ12.矩阵中的路径"></a>JZ12.矩阵中的路径</h3><h3 id="JZ13-机器人的运动范围"><a href="#JZ13-机器人的运动范围" class="headerlink" title="JZ13.机器人的运动范围"></a>JZ13.机器人的运动范围</h3><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="JZ03-数组中重复的数字"><a href="#JZ03-数组中重复的数字" class="headerlink" title="JZ03.数组中重复的数字"></a>JZ03.数组中重复的数字</h3><h3 id="JZ51-数组中的逆序对"><a href="#JZ51-数组中的逆序对" class="headerlink" title="JZ51.数组中的逆序对"></a>JZ51.数组中的逆序对</h3><h3 id="JZ40-最小的k个数"><a href="#JZ40-最小的k个数" class="headerlink" title="JZ40.最小的k个数"></a>JZ40.最小的k个数</h3><h3 id="JZ41-数据流的中位数"><a href="#JZ41-数据流的中位数" class="headerlink" title="JZ41.数据流的中位数"></a>JZ41.数据流的中位数</h3><h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="JZ65-不用加减乘除做加法"><a href="#JZ65-不用加减乘除做加法" class="headerlink" title="JZ65.不用加减乘除做加法"></a>JZ65.不用加减乘除做加法</h3><h3 id="JZ15-二进制中1的个数"><a href="#JZ15-二进制中1的个数" class="headerlink" title="JZ15.二进制中1的个数"></a>JZ15.二进制中1的个数</h3><h3 id="JZ16-数值的整数次方"><a href="#JZ16-数值的整数次方" class="headerlink" title="JZ16.数值的整数次方"></a>JZ16.数值的整数次方</h3><h3 id="JZ56-数组中只出现一次的两个数字"><a href="#JZ56-数组中只出现一次的两个数字" class="headerlink" title="JZ56.数组中只出现一次的两个数字"></a>JZ56.数组中只出现一次的两个数字</h3><h3 id="JZ64-求1-2-3-…-n"><a href="#JZ64-求1-2-3-…-n" class="headerlink" title="JZ64.求1+2+3+…+n"></a>JZ64.求1+2+3+…+n</h3><h2 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h2><h3 id="JZ29-顺时针打印矩阵"><a href="#JZ29-顺时针打印矩阵" class="headerlink" title="JZ29.顺时针打印矩阵"></a>JZ29.顺时针打印矩阵</h3><h3 id="JZ61-扑克牌顺子"><a href="#JZ61-扑克牌顺子" class="headerlink" title="JZ61.扑克牌顺子"></a>JZ61.扑克牌顺子</h3><h3 id="JZ67-把字符串换成整数-atoi"><a href="#JZ67-把字符串换成整数-atoi" class="headerlink" title="JZ67.把字符串换成整数(atoi)"></a>JZ67.把字符串换成整数(atoi)</h3><h3 id="JZ20-表示数值的字符串"><a href="#JZ20-表示数值的字符串" class="headerlink" title="JZ20.表示数值的字符串"></a>JZ20.表示数值的字符串</h3><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="JZ66-构建乘积数组"><a href="#JZ66-构建乘积数组" class="headerlink" title="JZ66.构建乘积数组"></a>JZ66.构建乘积数组</h3><h3 id="JZ50-第一个只出现一次的字符"><a href="#JZ50-第一个只出现一次的字符" class="headerlink" title="JZ50.第一个只出现一次的字符"></a>JZ50.第一个只出现一次的字符</h3><h3 id="JZ05-替换空格"><a href="#JZ05-替换空格" class="headerlink" title="JZ05.替换空格"></a>JZ05.替换空格</h3><h3 id="JZ21-调整数组顺序使奇数位于偶数位前面（一）"><a href="#JZ21-调整数组顺序使奇数位于偶数位前面（一）" class="headerlink" title="JZ21.调整数组顺序使奇数位于偶数位前面（一）"></a>JZ21.调整数组顺序使奇数位于偶数位前面（一）</h3><h3 id="JZ39-数组中出现次数超过一半的数字"><a href="#JZ39-数组中出现次数超过一半的数字" class="headerlink" title="JZ39.数组中出现次数超过一半的数字"></a>JZ39.数组中出现次数超过一半的数字</h3><h3 id="JZ43-整数中1出现的次数（从1到n整数中1出现的次数）"><a href="#JZ43-整数中1出现的次数（从1到n整数中1出现的次数）" class="headerlink" title="JZ43.整数中1出现的次数（从1到n整数中1出现的次数）"></a>JZ43.整数中1出现的次数（从1到n整数中1出现的次数）</h3><h3 id="JZ45-把数组排成最小的数"><a href="#JZ45-把数组排成最小的数" class="headerlink" title="JZ45.把数组排成最小的数"></a>JZ45.把数组排成最小的数</h3><h3 id="JZ49-丑数"><a href="#JZ49-丑数" class="headerlink" title="JZ49.丑数"></a>JZ49.丑数</h3><h3 id="JZ74-和为S的连续正数序列"><a href="#JZ74-和为S的连续正数序列" class="headerlink" title="JZ74.和为S的连续正数序列"></a>JZ74.和为S的连续正数序列</h3><h3 id="JZ57-和为S的两个数字"><a href="#JZ57-和为S的两个数字" class="headerlink" title="JZ57.和为S的两个数字"></a>JZ57.和为S的两个数字</h3><h3 id="JZ58-左旋转字符串"><a href="#JZ58-左旋转字符串" class="headerlink" title="JZ58.左旋转字符串"></a>JZ58.左旋转字符串</h3><h3 id="JZ62-孩子们的游戏（圆圈中最后剩下的数）"><a href="#JZ62-孩子们的游戏（圆圈中最后剩下的数）" class="headerlink" title="JZ62.孩子们的游戏（圆圈中最后剩下的数）"></a>JZ62.孩子们的游戏（圆圈中最后剩下的数）</h3><h3 id="JZ75-字符流中第一个不重复的字符"><a href="#JZ75-字符流中第一个不重复的字符" class="headerlink" title="JZ75.字符流中第一个不重复的字符"></a>JZ75.字符流中第一个不重复的字符</h3><h3 id="JZ14-剪绳子"><a href="#JZ14-剪绳子" class="headerlink" title="JZ14.剪绳子"></a>JZ14.剪绳子</h3><h3 id="JZ81-调整数组顺序使奇数位于偶数前面（二）"><a href="#JZ81-调整数组顺序使奇数位于偶数前面（二）" class="headerlink" title="JZ81.调整数组顺序使奇数位于偶数前面（二）"></a>JZ81.调整数组顺序使奇数位于偶数前面（二）</h3><h3 id="JZ83-剪绳子（进阶版）"><a href="#JZ83-剪绳子（进阶版）" class="headerlink" title="JZ83.剪绳子（进阶版）"></a>JZ83.剪绳子（进阶版）</h3><h3 id="JZ17-打印从1到最大的n位数"><a href="#JZ17-打印从1到最大的n位数" class="headerlink" title="JZ17.打印从1到最大的n位数"></a>JZ17.打印从1到最大的n位数</h3>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出错误或不够清晰的表达，邮件至 likunix@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2022-2026 北冥有鱼
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'photoSwipe';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true,&#34;flowchart&#34;:{&#34;useMaxWidth&#34;:false,&#34;htmlLabels&#34;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        background: url("https://s1.ax1x.com/2022/04/27/Lqf9IS.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</html>
